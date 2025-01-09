@@ -1,3 +1,5 @@
+const fs = require('fs').promises;
+
 const restaurantImages = [
   'https://b.zmtcdn.com/data/pictures/4/21201484/7ed9e1c3e8b13aa5005ae31d9e1504fe_featured_v2.jpg?output-format=webp',
   'https://b.zmtcdn.com/data/pictures/8/20930988/2a064933f8bdd261df8050594ab51c8b_featured_v2.jpg?output-format=webp',
@@ -522,3 +524,19 @@ for (let i = 0; i < 102; i++) {
 
   restaurants.push(obj);
 }
+
+// converting array into json and saving it into restaurants.json file
+
+const jsonRestaurants = JSON.stringify(restaurants, null, 2);
+
+fs.writeFile('restaurants.json', jsonRestaurants)
+  .then(() => {
+    console.log('JSON file has been saved!');
+  })
+  .catch((err) => {
+    console.error('Error writing file:', err);
+  });
+
+console.log(restaurants);
+
+console.log('Generated restaurants:', restaurants.length);
