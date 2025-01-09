@@ -21,9 +21,6 @@ body {
 header {
   background: white;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .logo-section {
@@ -92,7 +89,7 @@ header {
   background-color: white;
 }
 
-.Box {
+.nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,15 +226,146 @@ header {
   visibility: visible;
 }
 
+.collections-section {
+  background-color: rgb(241, 241, 241);
+  padding: 2rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+/* Collections heading */
+#Collection {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Collections description */
+#Collection_para {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Collection_para_2 {
+  color: #ff4252;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Images grid container */
+.header_images {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Individual image container */
+.header_images .Box {
+  position: relative;
+  width: 100%;
+}
+
+.images {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.images > img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.images:hover > img {
+  transform: scale(1.05);
+}
+
+/* Text overlay */
+.text1,
+.text2 {
+  position: absolute;
+  left: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.text1 {
+  bottom: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.text2 {
+  bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+#banner > img {
+  height: 250px;
+  margin-left: 22px;
+}
+
+#Bengaluru {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 22px;
+  margin-top: 15px;
+  color: rgb(27, 27, 27);
+  margin-bottom: 20px;
+}
+
+main {
+  background-color: white;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.filter-buttons {
+  margin-bottom: 20px;
+}
+.filter-btn {
+  font-size: 15px;
+  height: 30px;
+  margin: 25px 10px;
+  color: gray;
+  background-color: rgb(245, 242, 242);
+  border-color: gray;
+  border-radius: 10%;
+  border-width: 1px;
+}
+.filter-btn:hover {
+  background-color: rgb(230, 223, 223);
+}
+.filter-btn:active {
+  background-color: red;
+  color: white;
+}
+#filter1 {
+  margin-left: 20px;
+}
 /* Responsive Layout Changes */
 
-@media (max-width: 930px) {
+@media (max-width: 980px) {
   #search_dishes {
-    min-width: 200px;
+    min-width: 150px;
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 860px) {
   .hamburger-menu {
     display: block;
   }
@@ -275,13 +403,43 @@ header {
     justify-content: space-between;
     padding: 1rem;
   }
+
+  .collections-section {
+    padding: 1.5rem 1rem;
+  }
+
+  #Collection {
+    font-size: 1.5rem;
+  }
+
+  #Collection_para {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header_images {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .images > img {
+    height: 250px;
+  }
 }
 
 /* Additional responsive adjustments */
-@media (min-width: 831px) {
+@media (min-width: 861px) {
   .side-nav,
   .nav-overlay {
     display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .nav {
+    flex-direction: column;
   }
 }
 
@@ -297,5 +455,17 @@ header {
 
   .nav_image {
     height: 25px;
+  }
+
+  .collections-section {
+    padding: 1rem;
+  }
+
+  .images > img {
+    height: 200px;
+  }
+
+  .text1 {
+    font-size: 1.125rem;
   }
 }
