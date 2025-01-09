@@ -500,3 +500,25 @@ const restaurantLocationsBengaluru = [
   'HSR Sector 9',
   'HSR Sector 10',
 ];
+
+const offers = [0, 5, 10, 15, 20, 25, 30];
+
+const restaurants = [];
+
+for (let i = 0; i < 102; i++) {
+  const obj = {};
+  obj['image'] = restaurantImages[Math.floor(Math.random() * 102)];
+  obj['name'] = restaurantNames[Math.floor(Math.random() * 300)];
+  obj['rating'] = (Math.random() * 5 + 1).toFixed(1);
+  obj['food_type'] = foodTypes[Math.floor(Math.random() * 20)];
+  obj['Price_for_two'] = foodPrices[Math.floor(Math.random() * 18)];
+  obj['location'] =
+    restaurantLocationsBengaluru[Math.floor(Math.random() * 102)];
+  obj['distance'] = (Math.random() * 10 + 1).toFixed(2);
+  obj['offers'] = offers[Math.floor(Math.random() * 7)];
+  obj['alcohol'] = Math.random() > 0.7;
+  obj['restaurant_opening_time'] = Math.floor(Math.random() * 24);
+  obj['restaurant_closing_time'] = (obj['restaurant_opening_time'] + 12) % 24;
+
+  restaurants.push(obj);
+}
