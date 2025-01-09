@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+/* Container for max-width and centering */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+header {
+  background: white;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-section {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+
+/* Logo */
+#zomato_logo {
+  width: 125px;
+  height: auto;
+}
+
+/* Search Section */
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 8px #d1d1d1;
+  padding: 0.1rem 1rem;
+  border-radius: 8px;
+  gap: 0.5rem;
+  margin: 0 1rem;
+  background: white;
+  max-width: 700px;
+}
+
+#select_location {
+  min-width: 120px;
+  max-width: 200px;
+  padding: 0.5rem;
+  border: none;
+  color: #4a4a4a;
+  outline: none;
+  cursor: pointer;
+}
+
+#search_dishes {
+  flex: 1;
+  min-width: 300px;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.desktop-nav {
+  margin-left: auto;
+  /* pushes the login/signup to the right */
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Buttons */
+.header_buttons {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+.Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-signup {
+  color: rgb(113, 112, 112);
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+.login-signup:hover {
+  color: #363636;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.nav_image {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+.img_divs {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+}
+
+.nav_text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+/* Accessibility Improvements */
+.header_buttons:focus {
+  outline: 2px solid #ff7e8b;
+  outline-offset: 2px;
+}
+
+/* Better color contrast */
+.nav_text,
+#select_location,
+#search_dishes {
+  color: #4a4a4a;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  margin-right: 1rem;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1000;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #363636;
+  transition: all 0.3s ease;
+}
+
+/* Side Navigation Styles */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 1001;
+}
+
+.side-nav.active {
+  left: 0;
+}
+
+.side-nav-content {
+  padding: 2rem;
+}
+
+.side-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Layout Changes */
+
+@media (max-width: 930px) {
+  #search_dishes {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 830px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .logo-section {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  #logo-container {
+    order: 2;
+    justify-self: flex-end;
+  }
+
+  /* Ensure the hamburger menu is always visible */
+  .hamburger-menu {
+    order: 1;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .header_buttons {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  .navigation {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+}
+
+/* Additional responsive adjustments */
+@media (min-width: 831px) {
+  .side-nav,
+  .nav-overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .img_divs {
+    height: 50px;
+    width: 50px;
+  }
+
+  .nav_text {
+    font-size: 0.875rem;
+  }
+
+  .nav_image {
+    height: 25px;
+  }
+}

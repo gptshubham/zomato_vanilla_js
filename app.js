@@ -1416,3 +1416,41 @@
     restaurant_closing_time: 18,
   },
 ];
+
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sideNav = document.querySelector('.side-nav');
+  const overlay = document.querySelector('.nav-overlay');
+  const closeMenu = document.querySelector('.close-menu');
+
+  function openMenu() {
+    sideNav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+  }
+
+  function closeMenuHandler() {
+    sideNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+
+  menuToggle.addEventListener('click', openMenu);
+  closeMenu.addEventListener('click', closeMenuHandler);
+  overlay.addEventListener('click', closeMenuHandler);
+
+  // Close menu on escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sideNav.classList.contains('active')) {
+      closeMenuHandler();
+    }
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 830 && sideNav.classList.contains('active')) {
+      closeMenuHandler();
+    }
+  });
+});

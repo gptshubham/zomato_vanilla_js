@@ -3,9 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>zomato.com</title>
+    <title>Zomato</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="./script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="./app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo-section">
+          <!-- Hamburger Menu Button (visible on mobile) -->
+          <div class="hamburger-menu">
+            <button class="menu-toggle" aria-label="Toggle menu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+
+          <!-- Side Navigation Menu -->
+          <div class="side-nav">
+            <div class="side-nav-content">
+              <button class="close-menu" aria-label="Close menu">
+                &times;
+              </button>
+              <div class="side-nav-buttons">
+                <button id="log_in" class="header_buttons">Log in</button>
+                <button id="sign_up" class="header_buttons">Sign up</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overlay for when menu is open -->
+          <div class="nav-overlay"></div>
+
+          <!-- Zomato Logo (moved to the right) -->
+          <div class="Box" id="logo-container">
+            <img
+              src="./assets/images/header/logo.avif"
+              alt="zomato logo"
+              id="zomato_logo"
+            />
+          </div>
+
+          <!-- Search Section -->
+          <div class="search">
+            <div class="Box">
+              <i
+                class="fas fa-map-marker-alt"
+                style="color: #ff7e8b; font-size: 20px"
+              ></i>
+              <select name="select_location" id="select_location">
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Pune">Pune</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+              </select>
+            </div>
+            <div class="Box" id="space"><p>|</p></div>
+            <div class="Box"><i class="fas fa-search search-icon"></i></div>
+            <div class="Box">
+              <div id="search_dishes">
+                <input
+                  type="text"
+                  placeholder="search for restaurant, cuisine or a dish"
+                  id="search_dishes"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Login/Signup (hidden on mobile) -->
+          <div class="desktop-nav">
+            <div class="Box">
+              <button id="desktop_log_in" class="header_buttons login-signup">
+                Log in
+              </button>
+            </div>
+            <div class="Box">
+              <button id="desktop_sign_up" class="header_buttons login-signup">
+                Sign up
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- navigation -->
+        <div class="navigation">
+          <!-- Dining Out Button -->
+          <button class="header_buttons">
+            <div class="Box nav_top">
+              <div class="Box img_divs" id="spoon">
+                <img
+                  src="./assets/images/header/spoon_plate.avif"
+                  alt="zomato dining out logo"
+                  class="nav_image"
+                />
+              </div>
+              <div class="Box nav_text">Dining Out</div>
+            </div>
+          </button>
+          <!-- Delivery Button -->
+          <button class="header_buttons">
+            <div class="Box">
+              <div class="Box img_divs" id="scooter">
+                <img
+                  src="./assets/images/header/delivery_scooter.webp"
+                  alt="zomato Delivery scooter logo"
+                  class="nav_image"
+                />
+              </div>
+              <div class="Box nav_text">Delivery</div>
+            </div>
+          </button>
+          <!-- Night Life Button -->
+          <button class="header_buttons">
+            <div class="Box">
+              <div class="Box img_divs" id="nightlife">
+                <img
+                  src="./assets/images/header/night_life.webp"
+                  alt="zomato nightlife logo"
+                  class="nav_image"
+                />
+              </div>
+              <div class="Box nav_text">Nightlife</div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>
