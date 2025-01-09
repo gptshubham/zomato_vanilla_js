@@ -365,3 +365,26 @@ const restaurantNames = [
   'Fusion Fare',
   'The Sizzle Spot',
 ];
+
+const foodTypes = [
+  'Italian',
+  'Chinese',
+  'Indian',
+  'Mexican',
+  'Thai',
+  'Japanese',
+  'Mediterranean',
+  'American',
+  'French',
+  'Spanish',
+  'Korean',
+  'Vietnamese',
+  'Greek',
+  'Turkish',
+  'Lebanese',
+  'Caribbean',
+  'German',
+  'Brazilian',
+  'Ethiopian',
+  'Moroccan',
+];
