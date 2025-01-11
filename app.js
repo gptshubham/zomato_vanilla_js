@@ -1687,3 +1687,55 @@ function getRestaurant(restaurants) {
 }
 
 getRestaurant(restaurants);
+
+// filter functionalities
+
+// servers alcohol filter button functionality
+const serversAlcohol = document.querySelector('#alcohol');
+serversAlcohol.addEventListener('click', () => {
+  cardContainer.replaceChildren();
+  const result = restaurants.filter((obj) => obj.alcohol);
+  getRestaurant(result);
+});
+
+// offers filter button functionality
+const offers = document.querySelector('#offers');
+offers.addEventListener('click', () => {
+  cardContainer.replaceChildren();
+  const result = restaurants.filter((obj) => obj.offers);
+  getRestaurant(result);
+});
+
+// rating 4.5+ filter button functionality
+const ratingAbove4point5 = document.querySelector('#rating');
+ratingAbove4point5.addEventListener('click', () => {
+  cardContainer.replaceChildren();
+  const result = restaurants.filter((obj) => Number(obj.rating) > 4.5);
+  getRestaurant(result);
+});
+
+// open now filter button functionality
+const openNow = document.querySelector('#open');
+openNow.addEventListener('click', () => {
+  cardContainer.replaceChildren();
+
+  // current time in hours
+  const d = new Date();
+  const h = d.getHours();
+  const result = restaurants.filter((obj) => {
+    const openingHour = Number(obj.restaurant_opening_time);
+    const closingHour = Number(obj.restaurant_closing_time);
+    // restaurant closing past midnight
+    if (closingHour < openingHour) {
+      return h >= openingHour || h < closingHour;
+    } // restaurant closing before midnight
+    else {
+      return h >= openingHour && h < closingHour;
+    }
+  });
+  getRestaurant(result);
+});
+
+const filterPopUpButton = document.querySelector('#filter');
+
+filterPopUpButton.addEventListener('click', () => {});
