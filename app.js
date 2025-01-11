@@ -1454,3 +1454,156 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.querySelector('.slider-container');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const slides = document.querySelectorAll('.slider-container .Box');
+
+  let currentIndex = 0;
+  let isTransitioning = false;
+
+  function getSlidesToShow() {
+    if (window.innerWidth <= 580) return 1;
+    if (window.innerWidth <= 900) return 2;
+    if (window.innerWidth <= 1200) return 3;
+    return 4;
+  }
+
+  function getSlideWidth() {
+    const box = slider.querySelector('.Box');
+    if (!box) return 0;
+    const styles = window.getComputedStyle(box);
+    const marginRight = parseFloat(styles.marginRight) || 24; // Default gap
+    return box.offsetWidth + marginRight;
+  }
+
+  function updateSliderPosition(animate = true) {
+    if (!slider || slides.length === 0) return;
+
+    const slidesToShow = getSlidesToShow();
+    const slideWidth = getSlideWidth();
+
+    // Ensure currentIndex doesn't exceed maximum possible value
+    const maxIndex = Math.max(0, slides.length - slidesToShow);
+    currentIndex = Math.min(currentIndex, maxIndex);
+    currentIndex = Math.max(0, currentIndex);
+
+    // Add/remove transition based on animate parameter
+    slider.style.transition = animate ? 'transform 0.3s ease-in-out' : 'none';
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+    // Update button states
+    prevBtn.style.opacity = currentIndex === 0 ? '0' : '1';
+    prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+    nextBtn.style.opacity = currentIndex >= maxIndex ? '0' : '1';
+    nextBtn.style.visibility = currentIndex >= maxIndex ? 'hidden' : 'visible';
+  }
+
+  function handleSlideChange(direction) {
+    if (isTransitioning) return;
+
+    const slidesToShow = getSlidesToShow();
+    const maxIndex = slides.length - slidesToShow;
+
+    if (direction === 'prev' && currentIndex > 0) {
+      isTransitioning = true;
+      currentIndex--;
+      updateSliderPosition();
+    } else if (direction === 'next' && currentIndex < maxIndex) {
+      isTransitioning = true;
+      currentIndex++;
+      updateSliderPosition();
+    }
+  }
+
+  // Event Listeners
+  prevBtn.addEventListener('click', () => handleSlideChange('prev'));
+  nextBtn.addEventListener('click', () => handleSlideChange('next'));
+
+  // Reset isTransitioning after transition ends
+  slider.addEventListener('transitionend', () => {
+    isTransitioning = false;
+  });
+
+  // Touch Events with improved handling
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let isDragging = false;
+  let startTranslate = 0;
+
+  slider.addEventListener(
+    'touchstart',
+    (e) => {
+      if (isTransitioning) return;
+      isDragging = true;
+      touchStartX = e.touches[0].clientX;
+      startTranslate = -currentIndex * getSlideWidth();
+      slider.style.transition = 'none';
+    },
+    { passive: true }
+  );
+
+  slider.addEventListener(
+    'touchmove',
+    (e) => {
+      if (!isDragging) return;
+      touchEndX = e.touches[0].clientX;
+      const diff = touchEndX - touchStartX;
+      const newTranslate = startTranslate + diff;
+
+      // Limit dragging beyond boundaries
+      const maxTranslate = 0;
+      const minTranslate =
+        -(slides.length - getSlidesToShow()) * getSlideWidth();
+
+      if (newTranslate <= maxTranslate && newTranslate >= minTranslate) {
+        slider.style.transform = `translateX(${newTranslate}px)`;
+      }
+    },
+    { passive: true }
+  );
+
+  slider.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    const touchDiff = touchStartX - touchEndX;
+
+    slider.style.transition = 'transform 0.3s ease-in-out';
+
+    if (Math.abs(touchDiff) > 50) {
+      // Threshold for slide change
+      if (touchDiff > 0) {
+        handleSlideChange('next');
+      } else {
+        handleSlideChange('prev');
+      }
+    } else {
+      // Return to current position if swipe wasn't strong enough
+      updateSliderPosition();
+    }
+  });
+
+  // Improved resize handling
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const slidesToShow = getSlidesToShow();
+      const maxIndex = slides.length - slidesToShow;
+
+      // Adjust currentIndex if it exceeds new maxIndex
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+
+      updateSliderPosition(false); // Don't animate on resize
+    }, 250);
+  });
+
+  // Initial setup
+  if (slides.length > 0) {
+    updateSliderPosition(false);
+  }
+});
