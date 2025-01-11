@@ -1,7 +1,7 @@
 const restaurants = [
   {
     image:
-      'https://b.zmtcdn.com/data/pictures/7/52097/eab6f0182ff84881e68210d3f1bd98c9_featured_v2.jpg',
+      'https://b.zmtcdn.com/data/pictures/6/21534976/54b09bca566c14a8fbc83ff189ba1b0f_featured_v2.jpg',
     name: 'Sushi Lovers',
     rating: '1.0',
     food_type: 'Mexican',
@@ -99,7 +99,7 @@ const restaurants = [
   },
   {
     image:
-      'https://b.zmtcdn.com/data/pictures/8/18706428/bfedecafe497d8f11d128e524789ce6e_featured_v2.jpg',
+      'https://b.zmtcdn.com/data/pictures/1/21083811/3661733d97c40a3d74c76304daac7c0b_featured_v2.jpg',
     name: 'Burger Bliss',
     rating: '2.3',
     food_type: 'Greek',
@@ -127,7 +127,7 @@ const restaurants = [
   },
   {
     image:
-      'https://b.zmtcdn.com/data/pictures/7/52097/eab6f0182ff84881e68210d3f1bd98c9_featured_v2.jpg',
+      'https://b.zmtcdn.com/data/pictures/chains/3/50413/6745611429c2cec01c1d5b46403c7701_featured_v2.jpg',
     rating: '1.1',
     food_type: 'American',
     Price_for_two: 2400,
@@ -196,7 +196,7 @@ const restaurants = [
   },
   {
     image:
-      'https://b.zmtcdn.com/data/pictures/chains/9/51039/b35c126e7d10cdaaf7c3b27236b62654_featured_v2.jpg',
+      'https://b.zmtcdn.com/data/pictures/8/18422898/38e9fa2320df6b442e7315caa34d0b89_featured_v2.jpg',
     name: 'Midnight Munchies',
     rating: '4.9',
     food_type: 'Mexican',
@@ -238,7 +238,7 @@ const restaurants = [
   },
   {
     image:
-      'https://b.zmtcdn.com/data/pictures/7/52097/eab6f0182ff84881e68210d3f1bd98c9_featured_v2.jpg',
+      'https://b.zmtcdn.com/data/pictures/7/18586207/a60e5c7ed9e68d98cca887b612e0abee_featured_v2.jpg',
     name: 'Doughnut Dreams',
     rating: '3.6',
     food_type: 'Thai',
@@ -321,7 +321,7 @@ const restaurants = [
   },
   {
     image:
-      'https://b.zmtcdn.com/data/pictures/5/20478855/abc31a06b285fbfc17410539b27e6fa8_featured_v2.jpg',
+      'https://b.zmtcdn.com/data/pictures/5/20492965/2e308e0d566fef5196075715c960fa74_featured_v2.jpg',
     name: 'Bistro Eleven',
     rating: '3.1',
     food_type: 'Mediterranean',
