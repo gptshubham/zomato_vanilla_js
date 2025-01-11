@@ -254,7 +254,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/1/20973911/9349036bcfa3e7b61cffe0e2d182804f_featured_v2.jpg',
     name: 'The Artisan Cafe',
-    rating: '5.3',
+    rating: '4.3',
     food_type: 'Spanish',
     Price_for_two: 1700,
     location: 'JP Nagar Phase 7',
@@ -364,7 +364,7 @@ const restaurants = [
   {
     image:
       'https://b.zmtcdn.com/data/pictures/8/20628188/edf9fd4cae26698aec51a5791412126b_featured_v2.jpg',
-    rating: '5.3',
+    rating: '4.3',
     food_type: 'Italian',
     Price_for_two: 2100,
     location: 'HSR Sector 3',
@@ -392,7 +392,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/9/18843699/faf2f290b7922522f989886af7750fd8_featured_v2.jpg',
     name: 'Waffle World',
-    rating: '5.4',
+    rating: '4.4',
     food_type: 'Mediterranean',
     Price_for_two: 2000,
     location: 'Hegde Nagar',
@@ -475,7 +475,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/8/18706428/bfedecafe497d8f11d128e524789ce6e_featured_v2.jpg',
     name: 'The Seafood Spot',
-    rating: '5.8',
+    rating: '4.8',
     food_type: 'American',
     Price_for_two: 1000,
     location: 'Lingarajapuram',
@@ -545,7 +545,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/8/19894188/770fe8836387a66deb631c8bfd6f9a73_featured_v2.jpg',
     name: 'Taco Time',
-    rating: '5.9',
+    rating: '4.9',
     food_type: 'Mexican',
     Price_for_two: 1700,
     location: 'Magadi Road',
@@ -713,7 +713,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/chains/3/50633/dcc3d218f00ce657fe0350a509aaf871_featured_v2.jpg',
     name: 'Sushi Temptations',
-    rating: '5.2',
+    rating: '4.2',
     food_type: 'Ethiopian',
     Price_for_two: 1300,
     location: 'Gandhinagar',
@@ -727,7 +727,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/0/21538950/69e5703bfb3ba293da514f2d7e1ced2b_featured_v2.jpg',
     name: 'Farmhouse Eats',
-    rating: '5.4',
+    rating: '4.4',
     food_type: 'Vietnamese',
     Price_for_two: 1900,
     location: 'Malleshwaram',
@@ -796,7 +796,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/9/20996449/76db63ab6cca59adc9f1fea4f7823b5a_featured_v2.jpg',
     name: 'The Crispy Corner',
-    rating: '5.5',
+    rating: '4.5',
     food_type: 'Mediterranean',
     Price_for_two: 2100,
     location: 'Chandapura',
@@ -837,7 +837,7 @@ const restaurants = [
   {
     image:
       'https://b.zmtcdn.com/data/pictures/9/21007569/0d99980ce889f3dff4d332ceab150d60_featured_v2.jpg',
-    rating: '5.7',
+    rating: '4.7',
     food_type: 'Turkish',
     Price_for_two: 800,
     location: 'Nagarbhavi',
@@ -976,7 +976,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/9/20955989/4e3747335dec3d3278338ca401c5a4ff_featured_v2.jpg',
     name: 'Pasta Bliss',
-    rating: '5.1',
+    rating: '4.1',
     food_type: 'Moroccan',
     Price_for_two: 1600,
     location: 'Konanakunte',
@@ -990,7 +990,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/8/18819918/9824c7c596ac73e88e7040b02ea04fba_featured_v2.jpg',
     name: 'Bistro Bella',
-    rating: '5.5',
+    rating: '4.5',
     food_type: 'Indian',
     Price_for_two: 2400,
     location: 'Magadi Road',
@@ -1046,7 +1046,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/1/21090391/3dc1900e177e08aa8c9e287c0bef3ea4_featured_v2.jpg',
     name: 'Seaside Treats',
-    rating: '5.3',
+    rating: '4.3',
     food_type: 'Moroccan',
     Price_for_two: 800,
     location: 'Bidadi',
@@ -1101,7 +1101,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/9/18843699/faf2f290b7922522f989886af7750fd8_featured_v2.jpg',
     name: 'Tandoor Nights',
-    rating: '5.7',
+    rating: '4.7',
     food_type: 'Indian',
     Price_for_two: 1900,
     location: 'Hosur Sarjapur Road Layout (HSR)',
@@ -1141,7 +1141,7 @@ const restaurants = [
   {
     image:
       'https://b.zmtcdn.com/data/pictures/1/20973911/9349036bcfa3e7b61cffe0e2d182804f_featured_v2.jpg',
-    rating: '5.3',
+    rating: '4.3',
     food_type: 'Italian',
     Price_for_two: 1500,
     location: 'JP Nagar Phase 8',
@@ -1267,7 +1267,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/9/20080559/bf0acabd97fcd26274399685ff102271_featured_v2.jpg?output-format=webp',
     name: 'Bistro Bella',
-    rating: '5.4',
+    rating: '4.4',
     food_type: 'Lebanese',
     Price_for_two: 1300,
     location: 'Anekal',
@@ -1281,7 +1281,7 @@ const restaurants = [
     image:
       'https://b.zmtcdn.com/data/pictures/0/20540040/212506e1d8f38dd0d9697ce408faaacf_featured_v2.jpg',
     name: 'Taco Town',
-    rating: '5.6',
+    rating: '4.6',
     food_type: 'Indian',
     Price_for_two: 2200,
     location: 'HSR Layout',
@@ -1322,7 +1322,7 @@ const restaurants = [
   {
     image:
       'https://b.zmtcdn.com/data/pictures/9/21298169/66770a429d286e3b683f9e05520f0dbf_featured_v2.jpg',
-    rating: '5.5',
+    rating: '4.5',
     food_type: 'Japanese',
     Price_for_two: 1300,
     location: 'Begur',
@@ -1736,6 +1736,43 @@ openNow.addEventListener('click', () => {
   getRestaurant(result);
 });
 
+// filter popup button functionality
 const filterPopUpButton = document.querySelector('#filter');
+const filterPopUpOptions = document.querySelector('#filterPopUp');
 
-filterPopUpButton.addEventListener('click', () => {});
+filterPopUpButton.addEventListener('click', () => {
+  filterPopUpOptions.classList.remove('hidden');
+});
+
+// apply filter button functionality
+const applyFilter = document.querySelector('#apply-filter');
+
+applyFilter.addEventListener('click', () => {
+  const filterOption = document.querySelector(
+    'input[name="filter-option"]:checked'
+  );
+
+  const filter = filterOption.value;
+
+  if (filter == 'rating') {
+    restaurants.sort((a, b) => b.rating - a.rating);
+  } else if (filter == 'highLow') {
+    restaurants.sort((a, b) => b.Price_for_two - a.Price_for_two);
+  } else if (filter == 'costLow') {
+    restaurants.sort((a, b) => a.Price_for_two - b.Price_for_two);
+  } else if (filter == 'distance') {
+    restaurants.sort((a, b) => a.distance - b.distance);
+  }
+
+  cardContainer.replaceChildren();
+
+  getRestaurant(restaurants);
+  filterPopUpOptions.classList.add('hidden');
+});
+
+// close filter button functionality
+const closeFilter = document.querySelector('#close-filter');
+
+closeFilter.addEventListener('click', () =>
+  filterPopUpOptions.classList.add('hidden')
+);
