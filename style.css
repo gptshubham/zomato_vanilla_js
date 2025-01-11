@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #f8f8f8;
+  background-color: white;
 }
 
 /* Container for max-width and centering */
@@ -19,7 +19,6 @@ body {
 
 /* Header Styles */
 header {
-  background: white;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -47,7 +46,6 @@ header {
   border-radius: 8px;
   gap: 0.5rem;
   margin: 0 1rem;
-  background: white;
   max-width: 700px;
 }
 
@@ -121,7 +119,10 @@ header {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav_text {
@@ -130,13 +131,11 @@ header {
   color: #4a4a4a;
 }
 
-/* Accessibility Improvements */
 .header_buttons:focus {
   outline: 2px solid #ff7e8b;
   outline-offset: 2px;
 }
 
-/* Better color contrast */
 .nav_text,
 #select_location,
 #search_dishes {
@@ -224,6 +223,7 @@ header {
   visibility: visible;
 }
 
+/* Collections Section */
 .collections-section {
   background-color: rgb(241, 241, 241);
   padding: 2rem 1rem;
@@ -231,7 +231,6 @@ header {
   width: 100%;
 }
 
-/* Collections heading */
 #Collection {
   max-width: 1200px;
   margin: 0 auto;
@@ -240,7 +239,6 @@ header {
   margin-bottom: 1rem;
 }
 
-/* Collections description */
 #Collection_para {
   max-width: 1200px;
   margin: 0 auto;
@@ -258,7 +256,7 @@ header {
   cursor: pointer;
 }
 
-/* Updated Images Slider Styles */
+/* Images Slider Styles */
 .header_images {
   position: relative;
   max-width: 1200px;
@@ -286,7 +284,7 @@ header {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-/*  */
+
 .images > img {
   width: 100%;
   height: 320px;
@@ -359,52 +357,166 @@ header {
   right: 0.5rem;
 }
 
+/* Main Content */
+main {
+  background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 #banner > img {
-  height: 250px;
-  margin-left: 22px;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
 }
 
 #Bengaluru {
   font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 22px;
-  margin-top: 15px;
-  color: rgb(27, 27, 27);
-  margin-bottom: 20px;
+  font-weight: 500;
+  margin: 20px 0;
+  color: #1c1c1c;
 }
 
-main {
-  background-color: white;
-  padding-left: 200px;
-  padding-right: 200px;
-}
-
-.filter-buttons {
-  margin-bottom: 20px;
+/* Filter Buttons */
+.filter-container {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .filter-btn {
-  font-size: 15px;
-  height: 30px;
-  margin: 25px 10px;
-  color: gray;
-  background-color: rgb(245, 242, 242);
-  border-color: gray;
-  border-radius: 10%;
-  border-width: 1px;
+  padding: 8px 16px;
+  color: #4a4a4a;
+  background-color: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9375rem;
 }
 
 .filter-btn:hover {
-  background-color: rgb(230, 223, 223);
+  background-color: #f0f0f0;
 }
 
 .filter-btn:active {
-  background-color: red;
+  background-color: #ff7e8b;
+  color: white;
+  border-color: #ff7e8b;
+}
+
+/* Restaurant Cards */
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card_image_container {
+  position: relative;
+  width: 100%;
+  padding-top: 66.67%;
+  overflow: hidden;
+}
+
+.card_image_container .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.discount {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(37, 111, 239, 0.9);
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  backdrop-filter: blur(4px);
   color: white;
 }
 
-#filter1 {
-  margin-left: 20px;
+.discount .percentage {
+  height: 16px;
+  width: auto;
+}
+
+.card_details {
+  padding: 16px;
+}
+
+.restaurant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.restaurant_name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1c1c1c;
+}
+
+.rating {
+  background: #267e3e;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.food {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #363636;
+  font-size: 0.9375rem;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.distance {
+  color: #363636;
+  font-weight: 500;
 }
 
 /* Responsive Layout Changes */
@@ -416,31 +528,11 @@ main {
 
 @media (max-width: 900px) {
   .slider-container .Box {
-    min-width: calc(50% - 0.75rem); /* 2 items per view */
+    min-width: calc(50% - 0.75rem);
   }
 
   .images > img {
     height: 280px;
-  }
-}
-
-@media (max-width: 580px) {
-  .slider-container .Box {
-    min-width: calc(100% - 0.5rem); /* 1 item per view */
-  }
-
-  .images > img {
-    height: 250px;
-  }
-
-  .arrow-btn {
-    width: 36px;
-    height: 36px;
-  }
-}
-@media (max-width: 980px) {
-  #search_dishes {
-    min-width: 150px;
   }
 }
 
@@ -506,9 +598,13 @@ main {
   .images > img {
     height: 250px;
   }
+
+  #card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
 
-/* Additional responsive adjustments */
 @media (min-width: 861px) {
   .side-nav,
   .nav-overlay {
@@ -519,6 +615,36 @@ main {
 @media (max-width: 780px) {
   .nav {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  #card-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .card_details {
+    padding: 12px;
+  }
+
+  .restaurant_name {
+    font-size: 1rem;
+  }
+
+  .food,
+  .location {
+    font-size: 0.875rem;
+  }
+
+  .filter-container {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.875rem;
   }
 }
 
@@ -550,5 +676,18 @@ main {
 
   .text1 {
     font-size: 1.125rem;
+  }
+
+  #Bengaluru {
+    font-size: 24px;
+  }
+
+  .card_image_container {
+    padding-top: 75%; /* Slightly taller aspect ratio for mobile */
+  }
+
+  .discount {
+    padding: 4px 8px;
+    font-size: 0.875rem;
   }
 }

@@ -1,4 +1,4 @@
-[
+const restaurants = [
   {
     image:
       'https://b.zmtcdn.com/data/pictures/7/52097/eab6f0182ff84881e68210d3f1bd98c9_featured_v2.jpg',
@@ -1527,7 +1527,7 @@ document.addEventListener('DOMContentLoaded', function () {
     isTransitioning = false;
   });
 
-  // Touch Events with improved handling
+  // Touch Events
   let touchStartX = 0;
   let touchEndX = 0;
   let isDragging = false;
@@ -1553,7 +1553,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const diff = touchEndX - touchStartX;
       const newTranslate = startTranslate + diff;
 
-      // Limit dragging beyond boundaries
+      // Limiting dragging beyond boundaries
       const maxTranslate = 0;
       const minTranslate =
         -(slides.length - getSlidesToShow()) * getSlideWidth();
@@ -1585,7 +1585,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Improved resize handling
+  // resize handling
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -1597,8 +1597,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (currentIndex > maxIndex) {
         currentIndex = maxIndex;
       }
-
-      updateSliderPosition(false); // Don't animate on resize
+      // Don't animate on resize
+      updateSliderPosition(false);
     }, 250);
   });
 
@@ -1607,3 +1607,83 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSliderPosition(false);
   }
 });
+
+// Card Generation
+
+const cardContainer = document.querySelector('#card-container');
+
+function getRestaurant(restaurants) {
+  restaurants.forEach((restaurant) => {
+    // creating a card
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    // creating an image container
+    const cardImageContainer = document.createElement('div');
+    cardImageContainer.className = 'card_image_container';
+
+    // creating an img element
+    const cardImage = document.createElement('img');
+    cardImage.src = `${restaurant.image}`;
+    cardImage.className = 'image';
+
+    // discount flex over the image
+    const cardDiscount = document.createElement('div');
+    cardDiscount.className = 'discount';
+    if (restaurant.offers) {
+      cardDiscount.innerHTML = `
+    &#160;&#160;
+    <img
+    src="https://b.zmtcdn.com/data/o2_assets/c0e0fe766225fb9cdb3245a9915571201716296953.png"
+    alt="percentage within circle"
+    class="percentage"
+    />
+    <span>&#160;&#160;Flat ${restaurant.offers}% OFF</span>
+    `;
+    }
+
+    cardImageContainer.append(cardImage, cardDiscount);
+
+    // card details
+    const cardDetails = document.createElement('div');
+    cardDetails.className = 'card_details';
+
+    // restaurant name and rating
+    const nameAndRating = document.createElement('div');
+    nameAndRating.className = 'restaurant';
+    const restaurantName = document.createElement('span');
+    restaurantName.className = 'restaurant_name';
+    restaurantName.innerHTML = restaurant.name;
+    const restaurantRating = document.createElement('span');
+    restaurantRating.className = 'rating';
+    restaurantRating.innerHTML = `${restaurant.rating}&#9733;`;
+    nameAndRating.append(restaurantName, restaurantRating);
+
+    // type of food offered and price
+    const foodTypeAndPrice = document.createElement('div');
+    foodTypeAndPrice.className = 'food';
+    const foodType = document.createElement('span');
+    foodType.innerHTML = restaurant.food_type;
+    const price = document.createElement('span');
+    price.innerHTML = `&#8377;${restaurant.Price_for_two}`;
+    foodTypeAndPrice.append(foodType, price);
+
+    // restaurant location and distance
+    const locationAndDistance = document.createElement('div');
+    locationAndDistance.className = 'location';
+    const location = document.createElement('span');
+    location.innerHTML = restaurant.location;
+    const distance = document.createElement('span');
+    distance.className = 'distance';
+    distance.innerHTML = `${restaurant.distance}km`;
+    locationAndDistance.append(location, distance);
+
+    cardDetails.append(nameAndRating, foodTypeAndPrice, locationAndDistance);
+
+    card.append(cardImageContainer, cardDetails);
+
+    cardContainer.append(card);
+  });
+}
+
+getRestaurant(restaurants);
